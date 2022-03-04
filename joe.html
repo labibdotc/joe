@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Joe's Hotdog
+        </title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                display: grid;
+                grid-template-rows: auto;
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas: "left right";
+            }
+            div {
+                padding: 20px;
+            }
+            div#Left {
+                grid-area: left;
+            }
+            div#Right {
+                grid-area: right;
+            }
+        </style>
+    </head>
+    <body>
+        <script type = "text/javascript">
+            let numHotdogs = prompt("How many hotdogs do you want?");
+            let numFries = prompt("How many fries do you want?");
+            let numSodas = prompt("How many sodas do you want?");
+            
+            let subtotal = numHotdogs * 3.75 + numFries * 2.00  + numSodas * 1.80;
+            
+            document.write("Items ordered: " + numHotdogs + " hotdogs, " + numFries + " fries, " + numSodas + " sodas.");
+            document.write("<br/>Subtotal is " + subtotal.toFixed(2));
+            
+            
+            if(subtotal >= 20) {
+                subtotal = .9 * subtotal;
+                document.write("<br/>10% discount applies, now subtotal is:" + subtotal.toFixed(2));
+            }
+            document.write("<br/>Tax for your order will be " + (.625*subtotal).toFixed(2));
+            let total = subtotal * 1.625;
+            document.write("<br/>Total is " + total.toFixed(2));
+    
+
+        </script>
+    </body>
+</html>
